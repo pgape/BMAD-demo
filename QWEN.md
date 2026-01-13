@@ -1,74 +1,74 @@
-# Brownfield MadCore Project
+# Brownfield MadCore 项目
 
-## Project Overview
+## 项目概述
 
-This is a Brownfield MadCore project located at `E:\Code\demo1`. Brownfield MadCore is a development framework designed to facilitate both brownfield (existing codebase) and greenfield (new project) development workflows. The project includes a comprehensive set of tools, templates, and workflows to support agile software development.
+这是一个位于 `E:\Code\demo1` 的 Brownfield MadCore 项目。Brownfield MadCore 是一个旨在促进棕地（现有代码库）和绿地（新项目）开发工作流程的开发框架。该项目包含一套全面的工具、模板和工作流程，以支持敏捷软件开发。
 
-### Key Components
+### 关键组件
 
-- **Configuration System**: Managed through `.bmad-core/core-config.yaml`
-- **Workflows**: Predefined development workflows for different project types
-- **Templates**: Standardized templates for documentation and project structure
-- **Agents**: Specialized roles defined as part of the development team
-- **Checklists**: Quality assurance and process checklists
+- **配置系统**: 通过 `.bmad-core/core-config.yaml` 进行管理
+- **工作流程**: 为不同类型项目预定义的开发工作流程
+- **模板**: 用于文档和项目结构的标准化模板
+- **代理**: 开发团队中定义的专业角色
+- **清单**: 质量保证和过程清单
 
-## Architecture
+## 架构
 
-The project follows the MadCore architecture with the following key directories:
+该项目遵循 MadCore 架构，具有以下关键目录：
 
-- `.bmad-core/`: Core framework files and configurations
-  - `agent-teams/`: Team composition definitions
-  - `agents/`: Individual agent role definitions (PO, PM, Dev, QA, etc.)
-  - `checklists/`: Process and quality checklists
-  - `data/`: Supporting data files
-  - `tasks/`: Defined tasks and processes
-  - `templates/`: Documentation templates
-  - `utils/`: Utility scripts and documentation
-  - `workflows/`: Predefined project workflows
+- `.bmad-core/`: 核心框架文件和配置
+  - `agent-teams/`: 团队构成定义
+  - `agents/`: 个人代理角色定义（PO、PM、Dev、QA等）
+  - `checklists/`: 过程和质量检查清单
+  - `data/`: 支持数据文件
+  - `tasks/`: 定义的任务和过程
+  - `templates/`: 文档模板
+  - `utils/`: 实用脚本和文档
+  - `workflows/`: 预定义的项目工作流程
 
-## Configuration
+## 配置
 
-The project is configured through `core-config.yaml` which defines:
+项目通过 `core-config.yaml` 进行配置，定义了：
 
-- PRD (Product Requirements Document) handling
-- Architecture documentation settings
-- Development story locations
-- Debug logging paths
+- PRD（产品需求文档）处理
+- 架构文档设置
+- 开发故事位置
+- 调试日志路径
 
-## Building and Running
+## 构建和运行
 
-Since this is a MadCore framework project, traditional build/run commands don't apply directly. Instead, the framework provides:
+由于这是 MadCore 框架项目，传统的构建/运行命令不直接适用。相反，框架提供：
 
-1. **Workflow Management**: Use predefined workflows for different project types
-2. **Story Creation**: Generate development stories based on requirements
-3. **Documentation Generation**: Automated documentation from templates
+1. **工作流程管理**: 为不同类型项目使用预定义的工作流程
+2. **故事创建**: 基于需求生成开发故事
+3. **文档生成**: 从模板自动生成文档
 
-To work with this project:
+要使用此项目：
 
-1. Familiarize yourself with the available workflows in `.bmad-core/workflows/`
-2. Review the agent roles in `.bmad-core/agents/` to understand team responsibilities
-3. Use the templates in `.bmad-core/templates/` for consistent documentation
+1. 熟悉 `.bmad-core/workflows/` 中可用的工作流程
+2. 查看 `.bmad-core/agents/` 中的代理角色以了解团队职责
+3. 使用 `.bmad-core/templates/` 中的模板进行一致的文档编写
 
-## Development Conventions
+## 开发约定
 
-The MadCore framework enforces certain development conventions:
+MadCore 框架强制执行某些开发约定：
 
-- Story-driven development using the `.bmad-core/tasks/create-next-story.md` process
-- Quality gates defined in `.bmad-core/tasks/qa-gate.md`
-- Requirement tracing through `.bmad-core/tasks/trace-requirements.md`
+- 使用 `.bmad-core/tasks/create-next-story.md` 流程进行故事驱动开发
+- 在 `.bmad-core/tasks/qa-gate.md` 中定义的质量门
+- 通过 `.bmad-core/tasks/trace-requirements.md` 进行需求跟踪
 
-## Key Files
+## 关键文件
 
-- `.bmad-core/core-config.yaml`: Main project configuration
-- `.bmad-core/install-manifest.yaml`: Framework installation details
-- `.bmad-core/user-guide.md`: User documentation for the framework
-- `.bmad-core/enhanced-ide-development-workflow.md`: Enhanced IDE workflow documentation
+- `.bmad-core/core-config.yaml`: 主项目配置
+- `.bmad-core/install-manifest.yaml`: 框架安装详情
+- `.bmad-core/user-guide.md`: 框架的用户文档
+- `.bmad-core/enhanced-ide-development-workflow.md`: 增强IDE工作流程文档
 
-## Usage
+## 使用方法
 
-This project serves as a template for using the Brownfield MadCore framework. To begin development:
+此项目作为使用 Brownfield MadCore 框架的模板。要开始开发：
 
-1. Choose an appropriate workflow from `.bmad-core/workflows/`
-2. Customize the configuration in `core-config.yaml` as needed
-3. Follow the defined processes and checklists for consistent development
-4. Use the agent system to assign roles and responsibilities
+1. 从 `.bmad-core/workflows/` 中选择适当的工作流程
+2. 根据需要自定义 `core-config.yaml` 中的配置
+3. 遵循定义的过程和清单进行一致的开发
+4. 使用代理系统分配角色和职责
