@@ -7,6 +7,7 @@
 ## 技术栈
 
 ### 后端技术栈
+
 - **语言**: Java 17+
 - **框架**: Spring Boot 3.x
 - **持久层**: Spring Data JPA
@@ -15,6 +16,7 @@
 - **测试框架**: JUnit 5, Mockito, AssertJ
 
 ### 前端技术栈
+
 - **框架**: React 18+
 - **语言**: TypeScript
 - **状态管理**: Redux Toolkit
@@ -27,7 +29,7 @@
 
 ```
 mahjong-game/
-├── backend/                    # 后端模块
+├── mahjong-backend/                    # 后端模块
 │   ├── src/main/java/com/pgape/games/mahjong/
 │   │   ├── controller/         # 控制器层
 │   │   ├── service/            # 服务层
@@ -38,7 +40,7 @@ mahjong-game/
 │   │   ├── application.yml     # 应用配置文件
 │   │   └── application-dev.yml # 开发环境配置
 │   └── pom.xml                 # Maven配置文件
-├── frontend/                   # 前端模块
+├── mahjong-frontend/                   # 前端模块
 │   ├── src/
 │   │   ├── components/         # React组件
 │   │   ├── pages/              # 页面组件
@@ -58,12 +60,14 @@ mahjong-game/
 ## 环境要求
 
 ### 开发环境
+
 - Java 17+
 - Maven 3.8+
 - Node.js 18+
 - PostgreSQL 15+
 
 ### 运行环境
+
 - Java 17+ (后端)
 - Node.js 18+ (前端构建)
 - PostgreSQL 15+
@@ -173,12 +177,13 @@ npm run test
 ### 构建生产版本
 
 1. **构建后端**:
+
    ```bash
    cd backend
    mvn clean package -DskipTests
    ```
-
 2. **构建前端**:
+
    ```bash
    cd frontend
    npm run build
