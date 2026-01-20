@@ -2,6 +2,8 @@ package com.pgape.mahjong.core;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.ArrayUtil;
+import com.pgape.mahjong.entity.MahjongTile;
+import com.pgape.mahjong.entity.SuitType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +16,6 @@ import java.util.stream.Collectors;
  */
 public class MahjongTileFactory {
 
-    private static final String[] SUITS = {"wan", "tong", "tiao", "zi"};
-    private static final int[] VALUES_PER_SUIT = {9, 9, 9, 7}; // 万、筒、条各有9种，字牌有7种
     private static final int COUNT_PER_TILE = 4; // 每种牌有4张
 
     /**
@@ -27,17 +27,17 @@ public class MahjongTileFactory {
         List<MahjongTile> tiles = CollUtil.newArrayList();
 
         // 创建万子牌 (1-9万，每种4张)
-        addTilesForSuit(tiles, "wan", 1, 9);
+        addTilesForSuit(tiles, SuitType.WAN, 1, 9);
 
         // 创建筒子牌 (1-9筒，每种4张)
-        addTilesForSuit(tiles, "tong", 1, 9);
+        addTilesForSuit(tiles, SuitType.TONG, 1, 9);
 
         // 创建条子牌 (1-9条，每种4张)
-        addTilesForSuit(tiles, "tiao", 1, 9);
+        addTilesForSuit(tiles, SuitType.TIAO, 1, 9);
 
         // 创建字牌 (东南西北中发白，每种4张)
         // 1-4 代表东南西北，5-7 代表中发白
-        addTilesForSuit(tiles, "zi", 1, 7);
+        addTilesForSuit(tiles, SuitType.ZI, 1, 7);
 
         return tiles;
     }
@@ -50,7 +50,7 @@ public class MahjongTileFactory {
      * @param start  起始数值
      * @param end    结束数值
      */
-    private static void addTilesForSuit(List<MahjongTile> tiles, String suit, int start, int end) {
+    private static void addTilesForSuit(List<MahjongTile> tiles, SuitType suit, int start, int end) {
         for (int value = start; value <= end; value++) {
             for (int count = 0; count < COUNT_PER_TILE; count++) {
                 tiles.add(new MahjongTile(suit, value));
@@ -66,7 +66,7 @@ public class MahjongTileFactory {
      * @param value 数值
      * @return 指定牌的数量
      */
-    public static int getCountBySuitAndValue(List<MahjongTile> tiles, String suit, int value) {
+    public static int getCountBySuitAndValue(List<MahjongTile> tiles, SuitType suit, int value) {
         return (int) tiles.stream()
                 .filter(tile -> suit.equals(tile.getSuit()) && value == tile.getValue())
                 .count();
@@ -79,7 +79,7 @@ public class MahjongTileFactory {
      * @param suit  花色
      * @return 指定花色的牌数量
      */
-    public static int getCountBySuit(List<MahjongTile> tiles, String suit) {
+    public static int getCountBySuit(List<MahjongTile> tiles, SuitType suit) {
         return (int) tiles.stream()
                 .filter(tile -> suit.equals(tile.getSuit()))
                 .count();
@@ -93,6 +93,6 @@ public class MahjongTileFactory {
      */
     public static Map<String, List<MahjongTile>> groupTilesBySuitAndValue(List<MahjongTile> tiles) {
         return tiles.stream()
-                .collect(Collectors.groupingBy(tile -> tile.getSuit() + "_" + tile.getValue()));
+                .collect(Collectors.groupingBy(tile -> tile.getSuit().name() + "_" + tile.getValue()));
     }
 }
